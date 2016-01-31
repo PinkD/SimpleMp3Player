@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">SimlpleMp3Player</string>
+    <string name="save">保存</string>
+    <string name="savesuccess">保存成功</string>
+    <string name="clearsuccess">清除成功</string>
+    <string name="setting">设置</string>
+    <string name="randomplay">随机播放</string>
+    <string name="attention">注意事项/默认属性</string>
+    <string name="shutdown">定时关机</string>
+    <string name="sleep">睡眠模式</string>
+    <string name="shutdowntime">睡眠倒计时</string>
+    <string name="min">分钟</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="clear">清除</string>
+    <string name="changed">倒计时被改变</string>
+    <string name="about">关于</string>
+    <string name="exit">退出程序</string>
+    <string name="scanfile">扫描歌曲</string>
+    <string name="filenotfound">文件未找到</string>
+    <string name="lrcnotfound">歌词未找到</string>
+
+    <string name="title">Player</string>
+    <string name="allsongs">所有歌曲</string>
+    <string name="playing">正在播放</string>
+    <string name="nosong">未选择歌曲</string>
+    <string name="songname">Hello World!</string>
+    <string name="singer">花泽香菜</string>
+    <string name="time">03:48</string>
+    <string name="HQ">HQ</string>
+    <string name="about_author">RD</string>
+    <string name="attention_detail">\u3000\u30001.随机播放状态下的上一曲只会记住最近播放的那个，也就是说随机播放状态下，上一曲只有一次，过了就是随机上一曲，本来想设计三次的，想了想觉得一般用不着。</string>
+    <string name="about_detail">\u3000\u3000自己搞的一个音乐播放器，虽然到处都是问题,代码也一团糟， 但是还是将就算是个播放器，该实现的功能还是实现了的。。。</string>
+</resources>
