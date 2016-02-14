@@ -1,2 +1,2 @@
 # SimlpleMp3Player
-#就一个播放器，这个版本加了个字母索引
+#就一个播放器，这个版本加了个字母索引，然后把设置的Activity改成DrawerLayout了//改bug差点改死
