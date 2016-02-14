@@ -29,7 +29,7 @@
             android:text="@string/about"
             android:layout_centerInParent="true"
             android:textSize="27sp"
-            android:textColor="@color/title"
+            android:textColor="@color/white"
             />
     </RelativeLayout>
     <TextView

@@ -32,7 +32,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.settings);
         back = (ImageButton) findViewById(R.id.back);
         back.setOnClickListener(this);
         random_play_checkbox = (CheckBox) findViewById(R.id.is_random);
