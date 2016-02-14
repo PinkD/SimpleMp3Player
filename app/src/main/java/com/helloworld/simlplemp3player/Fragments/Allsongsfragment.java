@@ -30,7 +30,6 @@ public class Allsongsfragment extends Fragment{
     private SideBar sideBar = null;
 
 
-
     @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState)
@@ -41,6 +40,7 @@ public class Allsongsfragment extends Fragment{
                 setRecyclerViewAdapter();
             }
             OtherData.adapter = myadapter;
+            OtherData.sideBar = sideBar;
             return view;
         }
 

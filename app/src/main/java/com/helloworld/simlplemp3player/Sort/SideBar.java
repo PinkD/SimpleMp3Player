@@ -17,6 +17,7 @@ import com.helloworld.simlplemp3player.Dataclass.OtherData;
 import com.helloworld.simlplemp3player.R;
 
 public class SideBar extends View {
+
     // 触摸事件
     private OnTouchingLetterChangedListener onTouchingLetterChangedListener;
     private int choose = -1;// 选中
@@ -61,7 +62,7 @@ public class SideBar extends View {
             // paint.setColor(Color.WHITE);
             paint.setTypeface(Typeface.DEFAULT_BOLD);
             paint.setAntiAlias(true);
-            paint.setTextSize(28);
+            paint.setTextSize(24);
             // 选中的状态
             if (i == choose) {
                 paint.setColor(getResources().getColor(R.color.black));
@@ -86,12 +87,7 @@ public class SideBar extends View {
 
         switch (action) {
             case MotionEvent.ACTION_UP://public static final int ACTION_UP = 1;单点触摸离开动作        ，取消所有点击效果
-                setBackgroundColor(getResources().getColor(R.color.background_gray));//设置为透明？还是有点背景吧
-                choose = -1;//手指已经抬起
-                invalidate();
-                if (mTextDialog != null) {//使中间的TextView消失
-                    mTextDialog.setVisibility(View.INVISIBLE);
-                }
+                finger_up();
                 break;
 
             default://其他动作，将List/RecyclerView里面的数据移动到合适的地方,刷新//后来发现貌似是按下过后的动作
@@ -115,6 +111,16 @@ public class SideBar extends View {
         return true;
     }
 
+    public void finger_up(){
+        setBackgroundResource(R.color.background_gray);//设置为透明？还是有点背景吧
+        choose = -1;//手指已经抬起
+        invalidate();
+        if (mTextDialog != null) {//使中间的TextView消失
+            mTextDialog.setVisibility(View.INVISIBLE);
+        }
+    }
+
+
     /**
      * 向外公开的方法
      *
@@ -130,6 +136,7 @@ public class SideBar extends View {
      * @author coder
      */
     public interface OnTouchingLetterChangedListener {//回调
+
         public void onTouchingLetterChanged(char ch);
     }
 }

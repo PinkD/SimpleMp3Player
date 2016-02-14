@@ -12,6 +12,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -28,6 +29,7 @@ import com.helloworld.simlplemp3player.Dataclass.OtherData;
 import com.helloworld.simlplemp3player.Fragments.Allsongsfragment;
 import com.helloworld.simlplemp3player.Fragments.PlayFragment;
 import com.helloworld.simlplemp3player.Services.Playsongs;
+import com.helloworld.simlplemp3player.Sort.SideBar;
 import com.helloworld.simlplemp3player.Threads.ShutdownCount;
 
 import java.util.ArrayList;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //settings------------------------------------------------
     private ImageButton left_more = null;
     private CheckBox random_play_checkbox = null;
+    private TextView scan = null;
     private TextView attention = null;
     private TextView about = null;
     private TextView shutdown = null;
@@ -77,9 +80,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewPager.setAdapter(new PagAdapter(fragmentManager, fragments));
         viewPager.setCurrentItem(1);
         viewPager.addOnPageChangeListener(this);
+        viewPager.addOnPageChangeListener(this);
 
 
         //settings------------------------------------------------
+        scan = (TextView) findViewById(R.id.scan_file);
+        scan.setOnClickListener(this);
         left_more = (ImageButton) findViewById(R.id.left_more);
         left_more.setOnClickListener(this);
         random_play_checkbox = (CheckBox) findViewById(R.id.is_random);
@@ -112,6 +118,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setColor(1);
                 break;
             //settings------------------------------------------------
+            case R.id.scan_file:
+                Toast.makeText(MainActivity.this,"此功能暂未实现",Toast.LENGTH_SHORT).show();
+                break;
             case R.id.left_more:
                 left_more.setBackgroundResource(R.color.gray);
                 drawerLayout.openDrawer(GravityCompat.START);
@@ -167,6 +176,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
         public void onPageSelected(int position) {
             setColor(position);
+            if (position == 0){
+                OtherData.sideBar.finger_up();
+            }
         }
 
         @Override
@@ -290,5 +302,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onDrawerStateChanged(int newState) {
 
     }
+
+    @Override
+    public void onBackPressed() {//在drawer打开时按下back不直接退出，而是关闭drawer
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else super.onBackPressed();
+    }
+
 //drawer---------------------------------------------------
 }

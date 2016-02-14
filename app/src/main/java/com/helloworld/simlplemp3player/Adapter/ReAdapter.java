@@ -71,7 +71,6 @@ public class ReAdapter extends RecyclerView.Adapter<ReAdapter.ViewHolder> implem
         for (int i = 0, size = OtherData.songinfos.size(); i < size; i++) {
             if (OtherData.songinfos.get(i).getFisrt_char().charAt(0) != ch && ch_position < 27) {
                 ch = OtherData.songinfos.get(i).getFisrt_char().charAt(0);
-                System.out.println(ch);
                 letter_positions[ch_position] = i;
                 ch_position++;
             }
@@ -84,11 +83,6 @@ public class ReAdapter extends RecyclerView.Adapter<ReAdapter.ViewHolder> implem
     }
     public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {
         this.mOnItemClickListener = listener;
-        System.out.println("+++++++++++++++++++++++++++++++++");
-        for (int i = 0;i < 27;i++){
-            System.out.println(letter_positions[i]);
-        }
-        System.out.println("+++++++++++++++++++++++++++++++++");
     }
 
 

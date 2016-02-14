@@ -17,8 +17,8 @@
         android:layout_gravity="center"
         android:background="@color/none"
         android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="36sp"
+        android:textColor="@color/pinkdong"
+        android:textSize="48sp"
         android:visibility="invisible"
         />
 

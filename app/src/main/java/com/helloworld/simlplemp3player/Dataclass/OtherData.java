@@ -3,6 +3,8 @@ package com.helloworld.simlplemp3player.Dataclass;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
+import com.helloworld.simlplemp3player.Sort.SideBar;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,5 +31,7 @@ public class OtherData {
     public static int play_status = 0;
 
     public static Context context = null;
+
+    public static SideBar sideBar = null;
 
 }
