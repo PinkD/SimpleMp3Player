@@ -29,6 +29,7 @@ public class SaveSharedPreferences {
         OtherData.on_play_position = sharedPreferences.getInt("on_play_position", -1);
         OtherData.on_play_song = sharedPreferences.getString("on_play_song", context.getText(R.string.nosong).toString());
         OtherData.on_play_singer = sharedPreferences.getString("on_play_singer", null);
+        OtherData.random_play = sharedPreferences.getBoolean("random_play", false);
 
 //        user_name = sharedPreferences.getString("user_name", null);
 //        user_pass = sharedPreferences.getString("user_pass",null);

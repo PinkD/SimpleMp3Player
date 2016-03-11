@@ -137,9 +137,7 @@ public class Playsongs extends Service implements PlayerInterface,MediaPlayer.On
     public void onCreate() {
 
         ScanFile scanFile = new ScanFile(this, OtherData.SD_CARD1);
-        System.out.println("-------------------------------------------");
         System.out.println("判断是否中存在外置SD卡" + new File(OtherData.SD_CARD1).exists());//判断是否中存在外置SD卡
-        System.out.println("-------------------------------------------");
         songinfos = scanFile.getFileList();
         OtherData.songinfos = songinfos;
         saveSharedPreferences = new SaveSharedPreferences(this);//早读早轻松

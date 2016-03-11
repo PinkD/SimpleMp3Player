@@ -293,6 +293,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences sharedPreferences = getSharedPreferences("settings",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("random_play", random_play_checkbox.isChecked());
+        System.out.println("------------------");
+        System.out.println(random_play_checkbox.isChecked());
         editor.apply();
         OtherData.random_play = random_play_checkbox.isChecked();
         Toast.makeText(this, R.string.savesuccess, Toast.LENGTH_SHORT).show();

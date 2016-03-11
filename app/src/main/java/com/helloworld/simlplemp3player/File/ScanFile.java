@@ -32,7 +32,6 @@ public class ScanFile {
 
         Cursor cursor = context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null, "duration > 100000", null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
 
-        System.out.println("-------------------------------------------");
         while (cursor.moveToNext()) {
             name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE));
             singer = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST));
@@ -46,7 +45,6 @@ public class ScanFile {
 //            }
         }
         songinfos.sort();
-        System.out.println("-------------------------------------------");
 
 //        readFile(file);
     }
