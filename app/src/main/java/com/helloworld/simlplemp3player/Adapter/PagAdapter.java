@@ -8,20 +8,20 @@ import java.util.ArrayList;
 
 public class PagAdapter extends FragmentPagerAdapter {
 
-	private ArrayList<Fragment> fragments;
+    private ArrayList<Fragment> fragments;
 
-	public PagAdapter(FragmentManager fragmentManager, ArrayList<Fragment> fragments) {
-		super(fragmentManager);
-		this.fragments = fragments;
-	}
+    public PagAdapter(FragmentManager fragmentManager, ArrayList<Fragment> fragments) {
+        super(fragmentManager);
+        this.fragments = fragments;
+    }
 
-	@Override
-	public Fragment getItem(int position) {
-		return fragments.get(position);
-	}
+    @Override
+    public Fragment getItem(int position) {
+        return fragments.get(position);
+    }
 
-	@Override
-	public int getCount() {
-		return fragments.size();
-	}
+    @Override
+    public int getCount() {
+        return fragments.size();
+    }
 }

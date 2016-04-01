@@ -39,7 +39,7 @@ public class PlayFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState)
     {
         if (view == null) {
-            view = inflater.inflate(R.layout.playing,container, false);
+            view = inflater.inflate(R.layout.fragment_playing,container, false);
         }
         setView();
         return view;

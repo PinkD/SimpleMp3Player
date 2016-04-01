@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/songname"
+        android:text="@string/song_name"
         android:textSize="18sp"
         android:textColor="@color/noneblack"
         />

@@ -12,7 +12,6 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -29,14 +28,13 @@ import com.helloworld.simlplemp3player.Dataclass.OtherData;
 import com.helloworld.simlplemp3player.Fragments.Allsongsfragment;
 import com.helloworld.simlplemp3player.Fragments.PlayFragment;
 import com.helloworld.simlplemp3player.Services.Playsongs;
-import com.helloworld.simlplemp3player.Sort.SideBar;
 import com.helloworld.simlplemp3player.Threads.ShutdownCount;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,OnPageChangeListener,DrawerLayout.DrawerListener{
 
-    //settings------------------------------------------------
+    //drawer_settings------------------------------------------------
     private ImageButton left_more = null;
     private CheckBox random_play_checkbox = null;
     private TextView scan = null;
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView about = null;
     private TextView shutdown = null;
     private TextView exit = null;
-    //settings------------------------------------------------
+    //drawer_settings------------------------------------------------
     private DrawerLayout drawerLayout = null;
 
     public static MainActivity THIS = null;
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Fragment allsongs = null;
     private Fragment playing = null;
     private ArrayList<Fragment> fragments;
-    FragmentManager fragmentManager = null;
+    private FragmentManager fragmentManager = null;
 
 //    private ArrayList<View> views = null;
     private ViewPager viewPager = null;
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewPager.addOnPageChangeListener(this);
 
 
-        //settings------------------------------------------------
+        //drawer_settings------------------------------------------------
         scan = (TextView) findViewById(R.id.scan_file);
         scan.setOnClickListener(this);
         left_more = (ImageButton) findViewById(R.id.left_more);
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         about.setOnClickListener(this);
         exit = (TextView) findViewById(R.id.exit_app);
         exit.setOnClickListener(this);
-        //settings------------------------------------------------
+        //drawer_settings------------------------------------------------
     }
 
 
@@ -117,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 setColor(1);
                 break;
-            //settings------------------------------------------------
+            //drawer_settings------------------------------------------------
             case R.id.scan_file:
                 Toast.makeText(MainActivity.this,"此功能暂未实现",Toast.LENGTH_SHORT).show();
                 break;
@@ -140,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 stopService(new Intent(this, Playsongs.class));
                 Operations.EXIT();
                 break;
-            //settings------------------------------------------------
+            //drawer_settings------------------------------------------------
 
         }
     }
@@ -187,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-    //settings------------------------------------------------
+    //drawer_settings------------------------------------------------
     private void setShutdownTime(){
         Dialog dialog = new Dialog(this);
         dialog.setTitle(R.string.shutdown);
@@ -254,14 +252,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             shutdownCount.notify();
                         }
                     }
-                    Toast.makeText(MainActivity.this,R.string.savesuccess,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,R.string.save_success,Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                     break;
                 case R.id.cancel:
                     dialog.dismiss();
                     break;
                 case R.id.clear:
-                    Toast.makeText(MainActivity.this,R.string.clearsuccess,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,R.string.clear_success,Toast.LENGTH_SHORT).show();
                     if (shutdownCount != null && shutdownCount.isOncounting()) {
                         shutdownCount.setOncounting(false);
                         shutdownCount.notify();
@@ -272,7 +270,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
-    //settings------------------------------------------------
+    //drawer_settings------------------------------------------------
 
 //drawer---------------------------------------------------
     @Override
@@ -290,14 +288,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onDrawerClosed(View drawerView) {
         left_more.setBackgroundResource(R.color.none);
         //保存数据到sharedprefrences
-        SharedPreferences sharedPreferences = getSharedPreferences("settings",MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("drawer_settings",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("random_play", random_play_checkbox.isChecked());
         System.out.println("------------------");
         System.out.println(random_play_checkbox.isChecked());
         editor.apply();
         OtherData.random_play = random_play_checkbox.isChecked();
-        Toast.makeText(this, R.string.savesuccess, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.save_success, Toast.LENGTH_SHORT).show();
     }
 
     @Override

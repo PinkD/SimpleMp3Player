@@ -35,7 +35,7 @@ public class Allsongsfragment extends Fragment{
                                  Bundle savedInstanceState)
         {
             if (view == null) {
-                view = inflater.inflate(R.layout.allsongs,container, false);
+                view = inflater.inflate(R.layout.fragment_allsongs,container, false);
                 initViews();
                 setRecyclerViewAdapter();
             }

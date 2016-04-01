@@ -24,10 +24,10 @@ public class SaveSharedPreferences {
 
     private void getData(Context context){
 
-        sharedPreferences = context.getSharedPreferences("settings", Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences("drawer_settings", Context.MODE_PRIVATE);
         OtherData.on_play_path = sharedPreferences.getString("on_play_path", null);
         OtherData.on_play_position = sharedPreferences.getInt("on_play_position", -1);
-        OtherData.on_play_song = sharedPreferences.getString("on_play_song", context.getText(R.string.nosong).toString());
+        OtherData.on_play_song = sharedPreferences.getString("on_play_song", context.getText(R.string.no_song).toString());
         OtherData.on_play_singer = sharedPreferences.getString("on_play_singer", null);
         OtherData.random_play = sharedPreferences.getBoolean("random_play", false);
 

@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">SimlpleMp3Player</string>
     <string name="save">保存</string>
-    <string name="savesuccess">保存成功</string>
-    <string name="clearsuccess">清除成功</string>
+    <string name="save_success">保存成功</string>
+    <string name="clear_success">清除成功</string>
     <string name="setting">设置</string>
-    <string name="randomplay">随机播放</string>
+    <string name="random_play">随机播放</string>
     <string name="attention">注意事项/默认属性</string>
     <string name="shutdown">定时关机</string>
     <string name="sleep">睡眠模式</string>
-    <string name="shutdowntime">睡眠倒计时</string>
+    <string name="shutdown_time">睡眠倒计时</string>
     <string name="min">分钟</string>
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>
@@ -16,15 +16,15 @@
     <string name="changed">倒计时被改变</string>
     <string name="about">关于</string>
     <string name="exit">退出程序</string>
-    <string name="scanfile">扫描歌曲</string>
-    <string name="filenotfound">文件未找到</string>
-    <string name="lrcnotfound">歌词未找到</string>
+    <string name="scan_file">扫描歌曲</string>
+    <string name="file_not_found">文件未找到</string>
+    <string name="lrc_not_found">歌词未找到</string>
 
     <string name="title">Player</string>
-    <string name="allsongs">所有歌曲</string>
+    <string name="all_songs">所有歌曲</string>
     <string name="playing">正在播放</string>
-    <string name="nosong">未选择歌曲</string>
-    <string name="songname">Hello World!</string>
+    <string name="no_song">没有歌曲</string>
+    <string name="song_name">Hello World!</string>
     <string name="singer">花泽香菜</string>
     <string name="time">03:48</string>
     <string name="HQ">HQ</string>

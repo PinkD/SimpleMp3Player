@@ -50,7 +50,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/allsongs"
+                    android:text="@string/all_songs"
                     android:layout_weight="1"
                     />
                 <TextView
@@ -76,7 +76,7 @@
            />
 
     </RelativeLayout>
-    <include layout="@layout/settings"
+    <include layout="@layout/drawer_settings"
              android:layout_width="200dp"
              android:layout_height="match_parent"
              android:layout_marginTop="50dp"

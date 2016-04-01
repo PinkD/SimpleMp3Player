@@ -194,7 +194,7 @@ public class Playsongs extends Service implements PlayerInterface,MediaPlayer.On
                 mediaPlayer.setDataSource(songinfos.get(position).getPath());
                 mediaPlayer.prepare();
             } catch (IOException e) {
-                Toast.makeText(this, R.string.filenotfound, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.file_not_found, Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
             isreleasing = false;
@@ -208,7 +208,7 @@ public class Playsongs extends Service implements PlayerInterface,MediaPlayer.On
                 mediaPlayer.setDataSource(songinfos.get(position).getPath());
                 mediaPlayer.prepare();
             } catch (IOException e) {
-                Toast.makeText(this, R.string.filenotfound, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.file_not_found, Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         }
@@ -232,7 +232,7 @@ public class Playsongs extends Service implements PlayerInterface,MediaPlayer.On
             lrc_queue = lrctrans.getLrcQueue();
             if (lrc_queue == null) {
                 lrc_last.setText(null);
-                lrc_now.setText(getText(R.string.lrcnotfound));
+                lrc_now.setText(getText(R.string.lrc_not_found));
                 lrc_next.setText(null);
             } else {
                 lrc_time_queue = lrc_queue.get(LRC_TIME);
@@ -284,6 +284,10 @@ public class Playsongs extends Service implements PlayerInterface,MediaPlayer.On
 
     @Override
     public void next() {
+        if (songinfos.size() == 0) {
+            Toast.makeText(this, R.string.no_song, Toast.LENGTH_SHORT).show();
+            return;
+        }
         int next_song;
         int random_number;
         if (random_play) {
@@ -311,6 +315,10 @@ public class Playsongs extends Service implements PlayerInterface,MediaPlayer.On
 
     @Override
     public void last() {
+        if (songinfos.size() == 0) {
+            Toast.makeText(this, R.string.no_song, Toast.LENGTH_SHORT).show();
+            return;
+        }
         int last_song;
         int random_number;
         if (random_play) {
